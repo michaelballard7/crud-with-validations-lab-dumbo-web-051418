@@ -1,0 +1,24 @@
+<!-- I copied this as I was being lazy -->
+
+<h2><%= @song.title %></h2>
+by <strong><%= @song.artist_name %></strong>
+<% if @song.released? %>
+  <p>
+    Released in
+    <strong><%= @song.release_year %></strong>
+  </p>
+<% end %>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @song.genre %>
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+
+<!-- <%= form_for @song, method: :delete do |f| %>
+  <%= f.submit 'DELETE THIS COFFEE' %>
+<% end %> -->
+
+
+<%= button_to 'Delete', @song, method: :delete, data: { confirm: 'Are you sure?' } %>
